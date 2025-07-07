@@ -1,0 +1,304 @@
+<!-- The originial version of this template was made by Johnathan Soma and then messed with and customized by Aaron Reiss -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      h1{
+        max-width: 50%;
+        margin: 4rem auto 2rem auto;
+        }
+      
+      p{
+        max-width: 50%;
+        font-family: sans-serif;
+        margin: 0 auto 2rem auto;
+        font-size: 19px;
+      }
+      
+      #scrolly {
+        position: relative;
+        padding: 1rem;
+      }
+
+      .scrolly-overlay {
+        position: relative;
+        padding: 0;
+        max-width: 35rem;
+        margin-left: 2px;
+        margin-right: auto;
+      }
+
+      .sticky-thing {
+        position: -webkit-sticky;
+        position: sticky;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        z-index: 0;
+        top: 0;
+        height: 100vh;
+        /* Center everything inside */
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .step {
+        margin: 0 auto 2rem auto;
+        margin-bottom: 40rem;
+        background-color: #eee;
+        background-color: #fff;
+        color: black;
+        text-align: center;
+      }
+
+      .step5 {
+        margin-bottom: 4rem; /* faster transition */
+      }
+
+      
+
+
+      .step p {
+        padding: 1rem;
+        font-size: 1.25rem;
+        border: black;
+      }
+
+      .photoDiv {
+        width: 49%;
+        margin-right: 0px;
+        margin-left: auto;
+        display: block;
+      }
+
+      .hidden { visibility: hidden; }
+
+      /* When it's less than 700 pixels wide, do normal scrollytelling */
+      @media only screen and (min-width: 700px) {
+        #scrolly.side-by-side {
+          display: flex;
+        }
+
+        #scrolly.side-by-side > div {
+          flex-basis: 0;
+          flex-grow: 1;
+          flex-shrink: 1;
+          padding: 0.75em;
+        }
+
+        #scrolly.side-by-side .scrolly-overlay {
+          margin-top: 70vh;
+          order: 0;
+          /* Change these to adjust sizing options */
+          min-width: 15rem;
+          max-width: 20rem;
+        }
+
+        #scrolly.side-by-side .sticky-thing {
+          order: 1;
+          flex-grow: 2;
+        }
+      }
+    </style>
+	<script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.0.4/scrollama.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script>
+	
+  </head>
+
+  <body>
+    <h1>How do you call the place that you live?</h1>
+
+    <p>The ways we refer to where we live often depends on the context of who we're speaking with. By <a href="https://caora.ca/" target="_blank" rel="noopener noreferrer">Caora McKenna</a>. </p>
+
+
+  
+  
+      <section id="scrolly">
+        <div class="sticky-thing">
+<!-- Sticky Thing 1 goes below this line -->
+
+<img id="scrollyPhoto" class="photoDiv" src="map1.png">
+
+<!-- Sticky Thing 1 goes above this line -->
+
+        </div>
+
+        <div class="scrolly-overlay">
+          <div class="step" id="step1">
+            <p>
+              <p>When I'm telling people from around the world where I live, I usually tell them I live in Canada.</p>
+          </div>
+          <div class="step" id="step2">
+            <p>Then, if they're familiar and interested, I'll say that I live in Nova Scotia, on the east coast of Canada.</p>
+          </div>
+          <div class="step" id="step3">
+            <p>Next, I'll usually tell people I live in Halifax, which sometimes registers more than Nova Scotia does.</p> <p>I often add that I live on the peninsula, because Halifax the municipality is massive and sprawls along the Atlantic coast from Peggy's Cove to Ecum Secum.</p>
+            </div>
+          <div class="step step5" id="step4">
+            <br><p>If the context changes from meeting new people to selling a pair of pants to someone on Facebook Marketplace, I usually say I live near the Halifax Common.</p>
+          </div>
+          <div class="step" id="step5">
+            <p>And add that I'm on Charles Street between Robie and Windsor Streets, because I want them to get the impression that I'm easy to get to, so they're more likely to come and buy the pants.</p>
+          </div>
+        </div>
+      </section>
+
+      <p>I was thinking about all this because I was inspired by <a href="https://www.nytimes.com/interactive/2023/upshot/extremely-detailed-nyc-neighborhood-map.html" target="_blank" rel="noopener noreferrer">this map of New York City neighbourhoods as defined by their residents.</a>. 
+        <p>So I asked some of my friends, old coworkers and hockey teammates to tell me where they live and how they call it. Everyone who responded lives within a 20 minute drive from my house, but among the 30 people who answered, there were over 10 different ways people referred to the area where they lived.</p>
+  
+        <p>Everyone responded with their own imagined context for why I would be asking them where they live and how much I know myself about the areas of Halifax. One friend, for example, said they call the place where they live "Flower Streets." They knew I was familiar with Dartmouth, and so likely to understand the reference. Another friend said "Larry Uteck," which I knew was a road that snakes from the Bedford Highway to the 102, but might have referred to as Bedford if someone asked me.</p> 
+  
+        <p>In case you, like me, didn't know, Larry Uteck was a Canadian Football Hall of famer, who also served as the Deputy Mayor of Halifax in 1998.</p>
+
+      <p>You can explore my friends' and teammates' answers below. And if you want where you live to become part of the map, <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGqMWWDcxfzf0h94IWzY0fW5jZdn-K7yFbYLgd_nFq7lLcxw/viewform?usp=preview" target="_blank" rel="noopener noreferrer">you can fill out the survey yourself</a>. 
+        
+        </p>
+
+<div style="min-height:400px" id="datawrapper-vis-MkKvY"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/MkKvY/embed.js" charset="utf-8" data-target="#datawrapper-vis-MkKvY"></script><noscript><img src="https://datawrapper.dwcdn.net/MkKvY/full.png" alt="" /></noscript></div>
+
+
+
+    <script>
+
+      
+    /* Scrollytelling code goes under here */
+
+      // Code for the Photo Div #1 (aka #scrollyPhoto1)
+        
+        // Entering Step One
+      d3.select("#step1").on('stepin',function(e) {
+        console.log("We've arrived at STEP ONE in the photo div")
+        d3.select("#scrollyPhoto").attr("src", "map1.png");
+      })
+
+        // Entering Step Two
+        d3.select("#step2").on('stepin',function(e) {
+        console.log("We've arrived at STEP TWO in the photo div")
+        d3.select("#scrollyPhoto").attr("src", "map2.png");
+      })
+
+       // Entering Step Three
+       d3.select("#step3").on('stepin',function(e) {
+        console.log("We've arrived at STEP Three in the photo div")
+        d3.select("#scrollyPhoto").attr("src", "map3.png");
+      })
+
+       // Entering Step Four
+       d3.select("#step4").on('stepin',function(e) {
+        console.log("We've arrived at STEP Four in the photo div")
+        d3.select("#scrollyPhoto").attr("src", "map4.png");
+      })
+
+       // Entering Step Five
+       d3.select("#step5").on('stepin',function(e) {
+        console.log("We've arrived at STEP Five in the photo div")
+        d3.select("#scrollyPhoto").attr("src", "map5.png");
+      })
+
+    </script>
+
+<script>
+    const scroller = scrollama();
+
+	scroller
+		.setup({
+			step: "#scrolly .scrolly-overlay .step",
+			offset: 0.5,
+			debug: false
+		})
+		.onStepEnter(function({ element, index, direction}) {
+			const event = new CustomEvent('stepin', { detail: { direction: direction } })
+			element.dispatchEvent(event);
+		})
+		.onStepExit(function({ element, index, direction }) {
+			const event = new CustomEvent('stepout', { detail: { direction: direction } })
+			element.dispatchEvent(event);
+		});
+
+	window.addEventListener("resize", scroller.resize);
+    </script>
+
+
+    <!-- ai2html resizer script -->
+
+<script type="text/javascript">
+  (function() {
+      // only want one resizer on the page
+      if (document.documentElement.className.indexOf("g-resizer-v3-init") > -1) return;
+      document.documentElement.className += " g-resizer-v3-init";
+      // require IE9+
+      if (!("querySelector" in document)) return;
+      function resizer() {
+          var elements = Array.prototype.slice.call(document.querySelectorAll(".g-artboard[data-min-width]")),
+              widthById = {};
+          elements.forEach(function(el) {
+              var parent = el.parentNode,
+                  width = widthById[parent.id] || parent.getBoundingClientRect().width,
+                  minwidth = el.getAttribute("data-min-width"),
+                  maxwidth = el.getAttribute("data-max-width");
+              widthById[parent.id] = width;
+
+              if (+minwidth <= width && (+maxwidth >= width || maxwidth === null)) {
+                  el.style.display = "block";
+              } else {
+                  el.style.display = "none";
+              }
+          });
+          try {
+              if (window.parent && window.parent.$) {
+                  window.parent.$("body").trigger("resizedcontent", [window]);
+              }
+              if (window.require) {
+                  require(['foundation/main'], function() {
+                      require(['shared/interactive/instances/app-communicator'], function(AppCommunicator) {
+                          AppCommunicator.triggerResize();
+                      });
+                  });
+              }
+          } catch(e) { console.log(e); }
+      }
+
+      document.addEventListener('DOMContentLoaded', resizer);
+      // feel free to replace throttle with _.throttle, if available
+      window.addEventListener('resize', throttle(resizer, 200));        
+
+      function throttle(func, wait) {
+          // from underscore.js
+          var _now = Date.now || function() { return new Date().getTime(); },
+              context, args, result, timeout = null, previous = 0;
+          var later = function() {
+              previous = _now();
+              timeout = null;
+              result = func.apply(context, args);
+              if (!timeout) context = args = null;
+          };
+          return function() {
+              var now = _now(), remaining = wait - (now - previous);
+              context = this;
+              args = arguments;
+              if (remaining <= 0 || remaining > wait) {
+                  if (timeout) {
+                      clearTimeout(timeout);
+                      timeout = null;
+                  }
+                  previous = now;
+                  result = func.apply(context, args);
+                  if (!timeout) context = args = null;
+              } else if (!timeout && options.trailing !== false) {
+                  timeout = setTimeout(later, remaining);
+              }
+              return result;
+          };
+      }
+
+     
+  })();
+</script>
+
+  </body>
+</html>
